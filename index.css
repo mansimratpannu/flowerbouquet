@@ -182,10 +182,69 @@ body.stage-customize {
 }
 
 body.stage-share {
-  background: radial-gradient(circle, #ffe9c6 0%, #fdd6ca 60%, #ffc2d0 100%) no-repeat fixed;
-  --bg-color: #fdd6ca;
-  --btn-text: #fdd6ca;
-  --accent-color: #fca095;
+  background-color: #ffffff; /* Clean white base matching the heart background */
+  --bg-color: #ffffff;
+  --btn-text: #ff8fa3; /* Soft pink for buttons on the share stage */
+  --accent-color: #ffe5ea;
+}
+
+/* Animated Glowing Hearts Background */
+.hearts-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.5s ease, background-color 0.5s ease;
+}
+
+body.stage-share .hearts-bg-container {
+  opacity: 1;
+}
+
+.hearts-layer {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background-image: url("assets/glowing_hearts_bg.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  animation: floatHearts 25s infinite ease-in-out;
+}
+
+.hearts-layer.layer-2 {
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  animation: floatHearts2 35s infinite ease-in-out;
+}
+
+@keyframes floatHearts {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(1%, -1%) scale(1.05);
+  }
+}
+
+@keyframes floatHearts2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate(-1%, 1%) scale(1);
+  }
 }
 
 /* App Layout */
