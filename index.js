@@ -374,19 +374,65 @@ function submitCard(e) {
 
 // 8. Share View Logic
 
+// Helper to update the card content and hide elements if they are left empty
+function updateGiftCardDisplay() {
+  const giftCard = document.getElementById("gift-card");
+  const hasCardData = state.card.to || state.card.message || state.card.from;
+
+  if (!hasCardData) {
+    if (giftCard) giftCard.classList.add("hidden");
+    return;
+  }
+
+  if (giftCard) giftCard.classList.remove("hidden");
+
+  // Populate and show/hide individual fields
+  const toEl = document.getElementById("display-to");
+  if (toEl) {
+    if (state.card.to) {
+      toEl.textContent = `To: ${state.card.to}`;
+      toEl.classList.remove("hidden");
+    } else {
+      toEl.classList.add("hidden");
+    }
+  }
+
+  const msgEl = document.getElementById("display-msg");
+  if (msgEl) {
+    if (state.card.message) {
+      msgEl.textContent = state.card.message;
+      msgEl.classList.remove("hidden");
+    } else {
+      msgEl.classList.add("hidden");
+    }
+  }
+
+  const fromEl = document.getElementById("display-from");
+  if (fromEl) {
+    if (state.card.from) {
+      fromEl.textContent = `From: ${state.card.from}`;
+      fromEl.classList.remove("hidden");
+    } else {
+      fromEl.classList.add("hidden");
+    }
+  }
+
+  // Reset envelope state if there is card data
+  const envelope = document.getElementById("gift-card-envelope");
+  const content = document.getElementById("gift-card-content");
+  if (envelope && content) {
+    envelope.classList.remove("hidden");
+    content.classList.add("hidden");
+  }
+}
+
 // Sender Mode: Just created the bouquet
 function openShareViewSender() {
   // Populate Bouquet preview
   renderBouquet("share-bouquet-container", "share-flowers-wrap-container", "share-bush-background", "share-bush-foreground");
 
-  // Populate card inside
-  document.getElementById("display-to").textContent = `To: ${state.card.to}`;
-  document.getElementById("display-msg").textContent = state.card.message;
-  document.getElementById("display-from").textContent = `From: ${state.card.from}`;
-
-  // Reset envelope state
-  document.getElementById("gift-card-envelope").classList.remove("hidden");
-  document.getElementById("gift-card-content").classList.add("hidden");
+  // Update card visibility and values
+  updateGiftCardDisplay();
 
   // Generate sharing URL
   const shareURL = generateShareURL();
@@ -405,14 +451,8 @@ function openShareViewReceiver() {
   // Populate Bouquet preview
   renderBouquet("share-bouquet-container", "share-flowers-wrap-container", "share-bush-background", "share-bush-foreground");
 
-  // Populate card inside
-  document.getElementById("display-to").textContent = `To: ${state.card.to}`;
-  document.getElementById("display-msg").textContent = state.card.message;
-  document.getElementById("display-from").textContent = `From: ${state.card.from}`;
-
-  // Reset envelope state
-  document.getElementById("gift-card-envelope").classList.remove("hidden");
-  document.getElementById("gift-card-content").classList.add("hidden");
+  // Update card visibility and values
+  updateGiftCardDisplay();
 
   // Show receiver panels
   document.getElementById("sender-success-message").classList.add("hidden");
