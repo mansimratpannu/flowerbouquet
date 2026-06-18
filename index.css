@@ -179,6 +179,65 @@ body.stage-customize {
   --btn-text: #fce5eb;
 }
 
+/* Organic Marble Background */
+.marble-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fce5eb;
+  opacity: 0;
+  transition: opacity 0.5s ease, background-color 0.5s ease;
+}
+
+body.stage-customize .marble-bg-container {
+  opacity: 1;
+}
+
+.marble-layer {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background-image: url("assets/pink_marble_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.85;
+  animation: floatMarble 30s infinite ease-in-out;
+}
+
+.marble-layer.layer-2 {
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  animation: floatMarble2 40s infinite ease-in-out;
+}
+
+@keyframes floatMarble {
+  0%, 100% {
+    transform: rotate(0deg) scale(1) translate(0, 0);
+  }
+  50% {
+    transform: rotate(8deg) scale(1.06) translate(1%, -1%);
+  }
+}
+
+@keyframes floatMarble2 {
+  0%, 100% {
+    transform: rotate(0deg) scale(1.06) translate(0, 0);
+  }
+  50% {
+    transform: rotate(-8deg) scale(1) translate(-1%, 1%);
+  }
+}
+
 body.stage-share {
   background: radial-gradient(circle, #ffe9c6 0%, #fdd6ca 60%, #ffc2d0 100%) no-repeat fixed;
   --bg-color: #fdd6ca;
