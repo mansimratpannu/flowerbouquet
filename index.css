@@ -61,6 +61,26 @@ body.stage-home::before {
   opacity: 1;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("assets/pink_marble_bg.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+body.stage-customize::after {
+  opacity: 1;
+}
+
 body.stage-home {
   background-color: #ffffff; /* White background for gingham base */
   --bg-color: #ffffff;
@@ -173,10 +193,10 @@ body.stage-home .main-content {
 }
 
 body.stage-customize {
-  background-color: #EAE2F8; /* Soft premium pastel lavender/purple */
-  --bg-color: #EAE2F8;
-  --accent-color: #DED2F0;
-  --btn-text: #EAE2F8;
+  background-color: #fce5eb; /* Soft premium pastel pink matching marble */
+  --bg-color: #fce5eb;
+  --accent-color: #f9d2dc; /* Slightly darker pink for hovers */
+  --btn-text: #fce5eb;
 }
 
 body.stage-share {
