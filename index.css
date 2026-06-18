@@ -61,26 +61,6 @@ body.stage-home::before {
   opacity: 1;
 }
 
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("assets/pink_marble_bg.png");
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-body.stage-customize::after {
-  opacity: 1;
-}
-
 body.stage-home {
   background-color: #ffffff; /* White background for gingham base */
   --bg-color: #ffffff;
