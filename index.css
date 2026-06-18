@@ -216,34 +216,37 @@ body.stage-share .hearts-bg-container {
   left: -10%;
   width: 120%;
   height: 120%;
-  background-image: url("assets/glowing_hearts_bg.png");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.8;
-  animation: floatHearts 25s infinite ease-in-out;
+  background-image: url("assets/glowing_hearts_bg.svg");
+  background-size: 320px 320px;
+  background-repeat: repeat;
+  opacity: 0.9;
+  animation: floatHearts 40s infinite linear;
 }
 
 .hearts-layer.layer-2 {
-  opacity: 0.4;
+  background-image: url("assets/glowing_hearts_bg.svg");
+  background-size: 480px 480px;
+  background-repeat: repeat;
+  opacity: 0.45;
   mix-blend-mode: multiply;
-  animation: floatHearts2 35s infinite ease-in-out;
+  animation: floatHearts2 60s infinite linear;
 }
 
 @keyframes floatHearts {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
+  0% {
+    background-position: 0 0;
   }
-  50% {
-    transform: translate(1%, -1%) scale(1.05);
+  100% {
+    background-position: 320px -320px;
   }
 }
 
 @keyframes floatHearts2 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1.05);
+  0% {
+    background-position: 0 0;
   }
-  50% {
-    transform: translate(-1%, 1%) scale(1);
+  100% {
+    background-position: -480px -480px;
   }
 }
 
