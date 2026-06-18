@@ -4,13 +4,13 @@
 
 /* 1. Design Tokens & CSS Variables */
 :root {
-  --bg-color: #f488a0;          /* Vibrant pink theme */
+  --bg-color: #E0ECDE;          /* Soft premium pastel green */
   --text-color: #1A1A1A;        /* Deep Off-Black */
   --card-bg: #FFFFFF;           /* Card Paper White */
   --btn-bg: #000000;            /* Pitch Black Buttons */
-  --btn-text: #f488a0;          /* Pink Text for Buttons */
+  --btn-text: #E0ECDE;          /* Green Text for Buttons */
   --border-color: #000000;      /* Crisp Solid Borders */
-  --accent-color: #e07089;      /* Slightly darker pink for hovers */
+  --accent-color: #C8DEC4;      /* Slightly darker pastel green for hovers */
   
   --font-mono: 'Martian Mono', monospace;
   --font-serif: 'Playfair Display', Georgia, serif;
