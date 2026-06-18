@@ -40,9 +40,30 @@ body {
   transition: background-color 0.5s ease;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(249, 83, 114, 0.32) 50%, transparent 50%),
+    linear-gradient(rgba(249, 83, 114, 0.32) 50%, transparent 50%);
+  background-size: 42px 42px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+body.stage-home::before {
+  opacity: 1;
+}
+
 body.stage-home {
-  background-color: #fceef1; /* Unified soft pink background */
-  --bg-color: #fceef1;
+  background-color: #ffffff; /* White background for gingham base */
+  --bg-color: #ffffff;
   --btn-text: #f95372;
 }
 
@@ -84,7 +105,6 @@ body.stage-picker {
   --petal-color-5: #f197ad;
 }
 
-body.stage-home .petal-bg-container,
 body.stage-picker .petal-bg-container,
 body.stage-customize .petal-bg-container,
 body.stage-card .petal-bg-container {
