@@ -74,17 +74,17 @@ body.stage-card {
 }
 
 body.stage-picker {
-  background-color: #deeaf8; /* Soft premium pastel blue from user image */
-  --bg-color: #deeaf8;
-  --accent-color: #c8dcf2; /* Slightly darker pastel blue for hovers */
-  --btn-text: #deeaf8;
+  background-color: #fceef1; /* Soft premium pastel pink from user image */
+  --bg-color: #fceef1;
+  --accent-color: #f9dbe1; /* Slightly darker pastel pink for hovers */
+  --btn-text: #fceef1;
   
-  /* Petal Layer Colors (Blue Palette matching stage-picker) */
-  --petal-color-1: #deeaf8;
-  --petal-color-2: #d6e7fa;
-  --petal-color-3: #c2daf7;
-  --petal-color-4: #adccf5;
-  --petal-color-5: #97bef2;
+  /* Petal Layer Colors (Pink Palette matching stage-picker) */
+  --petal-color-1: #fceef1;
+  --petal-color-2: #fae0e5;
+  --petal-color-3: #f7ccd6;
+  --petal-color-4: #f4b4c3;
+  --petal-color-5: #f197ad;
 }
 
 /* Organic Concentric Petal Background */
@@ -100,7 +100,7 @@ body.stage-picker {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #deeaf8;
+  background-color: #fceef1;
   opacity: 0;
   transition: opacity 0.5s ease, background-color 0.5s ease;
 }
