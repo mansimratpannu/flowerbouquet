@@ -78,6 +78,94 @@ body.stage-picker {
   --bg-color: #deeaf8;
   --accent-color: #c8dcf2; /* Slightly darker pastel blue for hovers */
   --btn-text: #deeaf8;
+  
+  /* Petal Layer Colors (Blue Palette matching stage-picker) */
+  --petal-color-1: #deeaf8;
+  --petal-color-2: #d6e7fa;
+  --petal-color-3: #c2daf7;
+  --petal-color-4: #adccf5;
+  --petal-color-5: #97bef2;
+}
+
+/* Organic Concentric Petal Background */
+.petal-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #deeaf8;
+  opacity: 0;
+  transition: opacity 0.5s ease, background-color 0.5s ease;
+}
+
+body.stage-picker .petal-bg-container {
+  opacity: 1;
+}
+
+.petal-layer {
+  position: absolute;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  animation: floatPetal 35s infinite ease-in-out;
+}
+
+.petal-layer.layer-1 {
+  width: 150vmax;
+  background-color: var(--petal-color-1);
+  border-radius: 43% 57% 48% 52% / 45% 48% 52% 55%;
+  animation-duration: 40s;
+}
+
+.petal-layer.layer-2 {
+  width: 125vmax;
+  background-color: var(--petal-color-2);
+  border-radius: 52% 48% 55% 45% / 50% 52% 48% 50%;
+  animation-duration: 34s;
+  animation-delay: -3s;
+}
+
+.petal-layer.layer-3 {
+  width: 100vmax;
+  background-color: var(--petal-color-3);
+  border-radius: 48% 52% 45% 55% / 48% 45% 55% 52%;
+  animation-duration: 28s;
+  animation-delay: -7s;
+}
+
+.petal-layer.layer-4 {
+  width: 75vmax;
+  background-color: var(--petal-color-4);
+  border-radius: 55% 45% 52% 48% / 52% 55% 45% 48%;
+  animation-duration: 22s;
+  animation-delay: -12s;
+}
+
+.petal-layer.layer-5 {
+  width: 50vmax;
+  background-color: var(--petal-color-5);
+  border-radius: 46% 54% 48% 52% / 50% 48% 52% 50%;
+  animation-duration: 16s;
+  animation-delay: -17s;
+}
+
+@keyframes floatPetal {
+  0%, 100% {
+    transform: rotate(0deg) scale(1) translate(0, 0);
+  }
+  33% {
+    transform: rotate(120deg) scale(1.03) translate(1%, -1%);
+  }
+  66% {
+    transform: rotate(240deg) scale(0.97) translate(-1%, 1%);
+  }
 }
 
 body.stage-home .main-content {
