@@ -4,13 +4,13 @@
 
 /* 1. Design Tokens & CSS Variables */
 :root {
-  --bg-color: #F5F5DC;          /* Classic Warm Cream / Beige */
+  --bg-color: #EAE2F8;          /* Soft premium pastel lavender/purple */
   --text-color: #1A1A1A;        /* Deep Off-Black */
   --card-bg: #FFFFFF;           /* Card Paper White */
   --btn-bg: #000000;            /* Pitch Black Buttons */
-  --btn-text: #F5F5DC;          /* Cream Text for Buttons */
+  --btn-text: #EAE2F8;          /* Lavender Text for Buttons */
   --border-color: #000000;      /* Crisp Solid Borders */
-  --accent-color: #E6E6C2;      /* Slightly darker warm cream for hovers */
+  --accent-color: #DED2F0;      /* Slightly darker lavender/purple for hovers */
   
   --font-mono: 'Martian Mono', monospace;
   --font-serif: 'Playfair Display', Georgia, serif;
@@ -44,6 +44,10 @@ body.stage-home {
   background-color: #FFEAEF; /* Soft premium pastel blush pink */
 }
 
+body.stage-home .main-content {
+  align-items: center; /* Centered vertically on homepage */
+}
+
 /* App Layout */
 .app-container {
   display: flex;
@@ -57,8 +61,8 @@ body.stage-home {
 
 .app-header {
   text-align: center;
-  padding: 20px 0;
-  margin-bottom: 20px;
+  padding: 10px 0;
+  margin-bottom: 10px;
 }
 
 .logo-link {
@@ -88,9 +92,10 @@ body.stage-home {
 .main-content {
   flex-grow: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
+  padding-top: 10px;
 }
 
 .app-footer {
