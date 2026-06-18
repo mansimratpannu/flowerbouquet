@@ -183,23 +183,25 @@ body.stage-customize {
 
 body.stage-share,
 body.stage-garden {
-  background: linear-gradient(135deg, #ffe5ec 0%, #fff0f3 33%, #f3e8ff 66%, #ffe5ec 100%);
-  background-size: 300% 300%;
-  animation: gradientShift 15s ease infinite;
+  background-image: url("assets/wavy_checkers_bg.jpg");
+  background-size: 105% 105%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: breathingBg 18s infinite ease-in-out;
   --bg-color: #fff0f3;
   --btn-text: #ff8fa3; /* Soft pink for buttons on the share and garden stages */
   --accent-color: #ffe5ea;
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
+@keyframes breathingBg {
+  0%, 100% {
+    background-size: 105% 105%;
+    background-position: center center;
   }
   50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+    background-size: 115% 115%;
+    background-position: 48% 52%;
   }
 }
 
