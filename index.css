@@ -40,12 +40,62 @@ body {
   transition: background-color 0.5s ease;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(249, 83, 114, 0.32) 50%, transparent 50%),
+    linear-gradient(rgba(249, 83, 114, 0.32) 50%, transparent 50%);
+  background-size: 42px 42px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+body.stage-home::before {
+  opacity: 1;
+}
+
 body.stage-home {
-  background-color: #FFEAEF; /* Soft premium pastel blush pink */
+  background-color: #ffffff; /* White background for gingham base */
+  --bg-color: #ffffff;
+  --btn-text: #f95372;
+}
+
+body.stage-card {
+  background-color: #f4bda3; /* Warm peach color from user image */
+  --bg-color: #f4bda3;
+  --btn-text: #f4bda3;
+}
+
+body.stage-picker {
+  background-color: #deeaf8; /* Soft premium pastel blue from user image */
+  --bg-color: #deeaf8;
+  --accent-color: #c8dcf2; /* Slightly darker pastel blue for hovers */
+  --btn-text: #deeaf8;
 }
 
 body.stage-home .main-content {
   align-items: center; /* Centered vertically on homepage */
+}
+
+body.stage-customize {
+  background-color: #EAE2F8; /* Soft premium pastel lavender/purple */
+  --bg-color: #EAE2F8;
+  --accent-color: #DED2F0;
+  --btn-text: #EAE2F8;
+}
+
+body.stage-share {
+  background: radial-gradient(circle, #ffe9c6 0%, #fdd6ca 60%, #ffc2d0 100%) no-repeat fixed;
+  --bg-color: #fdd6ca;
+  --btn-text: #fdd6ca;
+  --accent-color: #fca095;
 }
 
 /* App Layout */

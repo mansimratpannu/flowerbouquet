@@ -62,12 +62,9 @@ function setupLogoListener() {
 function switchView(targetStage) {
   state.stage = targetStage;
   
-  // Toggle home-specific background class on body
-  if (targetStage === "home") {
-    document.body.classList.add("stage-home");
-  } else {
-    document.body.classList.remove("stage-home");
-  }
+  // Toggle stage-specific background classes on body
+  document.body.classList.remove("stage-home", "stage-picker", "stage-customize", "stage-card", "stage-share", "stage-garden");
+  document.body.classList.add(`stage-${targetStage}`);
   
   // Hide all sections
   document.querySelectorAll(".view-section").forEach(section => {
