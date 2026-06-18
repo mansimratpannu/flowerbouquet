@@ -226,45 +226,7 @@ body.stage-garden .hearts-bg-container {
   opacity: 1;
 }
 
-.hearts-layer {
-  position: absolute;
-  top: -10%;
-  left: -10%;
-  width: 120%;
-  height: 120%;
-  background-image: url("assets/glowing_hearts_bg.svg");
-  background-size: 480px 480px;
-  background-repeat: repeat;
-  opacity: 0.9;
-  animation: floatHearts 50s infinite linear;
-}
 
-.hearts-layer.layer-2 {
-  background-image: url("assets/glowing_hearts_bg.svg");
-  background-size: 720px 720px;
-  background-repeat: repeat;
-  opacity: 0.45;
-  mix-blend-mode: multiply;
-  animation: floatHearts2 75s infinite linear;
-}
-
-@keyframes floatHearts {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 480px -480px;
-  }
-}
-
-@keyframes floatHearts2 {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: -720px -720px;
-  }
-}
 
 /* Twinkle Sparkles Layer */
 .sparkles-layer {
