@@ -273,18 +273,17 @@ body.stage-garden .hearts-bg-container {
 /* App Layout */
 .app-container {
   display: flex;
-  flex-col: column;
   flex-direction: column;
   min-height: 100vh;
-  padding: 20px;
+  padding: 10px 15px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .app-header {
   text-align: center;
-  padding: 10px 0;
-  margin-bottom: 10px;
+  padding: 5px 0 0 0;
+  margin-bottom: 0;
 }
 
 .logo-link {
@@ -317,12 +316,12 @@ body.stage-garden .hearts-bg-container {
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 .app-footer {
   text-align: center;
-  padding: 40px 0 20px 0;
+  padding: 20px 0 10px 0;
   font-size: 12px;
   opacity: 0.6;
 }
@@ -338,7 +337,7 @@ body.stage-garden .hearts-bg-container {
   font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 500;
-  padding: 16px 32px;
+  padding: 11px 22px;
   border: none;
   cursor: pointer;
   text-transform: uppercase;
@@ -426,7 +425,7 @@ body.stage-garden .hearts-bg-container {
 
 .section-subtitle {
   font-size: 13px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 /* 4. Navigation Views Setup */
@@ -453,7 +452,7 @@ body.stage-garden .hearts-bg-container {
 }
 
 .hero-flower-wrapper {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   display: inline-block;
   animation: gentleFloat 6s ease-in-out infinite;
 }
@@ -473,7 +472,7 @@ body.stage-garden .hearts-bg-container {
   letter-spacing: -1px;
   color: var(--text-color);
   text-transform: none;
-  margin-top: 10px;
+  margin-top: 4px;
   margin-bottom: 5px;
   line-height: 1.1;
   text-align: center;
@@ -486,7 +485,7 @@ body.stage-garden .hearts-bg-container {
   color: var(--text-color);
   opacity: 0.8;
   text-transform: uppercase;
-  margin-bottom: 45px;
+  margin-bottom: 20px;
   line-height: 1.6;
   text-align: center;
 }
@@ -519,8 +518,8 @@ body.stage-garden .hearts-bg-container {
 .flower-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-bottom: 50px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 500px) {
@@ -631,8 +630,8 @@ body.stage-garden .hearts-bg-container {
   background-color: transparent; /* No background */
   border: none; /* No border */
   border-radius: 0;
-  padding: 10px 0 0 0;
-  margin: 0 auto 10px auto;
+  padding: 0;
+  margin: 0 auto 4px auto;
   z-index: 50;
   box-shadow: none; /* No shadow */
   backdrop-filter: none;
@@ -642,7 +641,7 @@ body.stage-garden .hearts-bg-container {
 .drawer-title {
   font-size: 12px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   text-align: center;
 }
 
@@ -704,7 +703,7 @@ body.stage-garden .hearts-bg-container {
 .customizer-layout {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 15px;
   align-items: center;
 }
 
@@ -728,8 +727,8 @@ body.stage-garden .hearts-bg-container {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
-  max-width: 600px;
-  min-height: 520px;
+  max-width: 500px;
+  min-height: 440px;
   background-color: transparent;
   overflow: visible; /* Let tall foliage and high blooms breathe naturally without clipping */
   display: flex;
@@ -848,13 +847,13 @@ body.stage-garden .hearts-bg-container {
 .control-actions {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 40px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .control-btn {
   width: 100%;
-  padding: 18px;
+  padding: 12px;
   font-size: 12px;
 }
 
@@ -877,14 +876,14 @@ body.stage-garden .hearts-bg-container {
 }
 
 .card-form-wrapper {
-  margin-top: 20px;
+  margin-top: 10px;
   perspective: 1000px;
 }
 
 .card-paper {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
-  padding: 40px 30px;
+  padding: 25px 24px;
   box-shadow: var(--shadow-card);
   text-align: left;
   border-radius: 2px;
@@ -903,7 +902,7 @@ body.stage-garden .hearts-bg-container {
 }
 
 .form-group {
-  margin-bottom: 24px;
+  margin-bottom: 15px;
 }
 
 .form-group label {
@@ -948,8 +947,8 @@ body.stage-garden .hearts-bg-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 30px;
-  gap: 20px;
+  margin-top: 15px;
+  gap: 15px;
 }
 
 .card-actions .btn {
@@ -965,7 +964,7 @@ body.stage-garden .hearts-bg-container {
 
 .success-banner {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   animation: scaleUp 0.3s ease-out;
 }
 
@@ -988,7 +987,7 @@ body.stage-garden .hearts-bg-container {
 .share-layout {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -1010,14 +1009,14 @@ body.stage-garden .hearts-bg-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 15px;
 }
 
 /* Premium Envelope Card Opening Effect */
 .gift-card {
   width: 100%;
   max-width: 350px;
-  min-height: 250px;
+  min-height: 220px;
   position: relative;
   cursor: pointer;
   perspective: 1000px;
@@ -1025,7 +1024,7 @@ body.stage-garden .hearts-bg-container {
 
 .gift-card-front {
   width: 100%;
-  height: 250px;
+  height: 220px;
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-card);
@@ -1055,7 +1054,7 @@ body.stage-garden .hearts-bg-container {
 
 .envelope-body {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 20px;
   z-index: 2;
 }
 
@@ -1082,7 +1081,7 @@ body.stage-garden .hearts-bg-container {
   width: 100%;
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
-  padding: 40px 30px;
+  padding: 25px 20px;
   box-shadow: var(--shadow-card);
   text-align: left;
   border-radius: 2px;
@@ -1099,7 +1098,7 @@ body.stage-garden .hearts-bg-container {
   font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 6px;
 }
@@ -1109,10 +1108,10 @@ body.stage-garden .hearts-bg-container {
   font-size: 18px;
   line-height: 1.6;
   color: #333333;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   text-transform: none;
   font-style: italic;
-  min-height: 80px;
+  min-height: 60px;
 }
 
 .card-content-from {
@@ -1158,7 +1157,7 @@ body.stage-garden .hearts-bg-container {
   flex-grow: 1;
   border: none;
   background: transparent;
-  padding: 16px;
+  padding: 12px;
   font-family: var(--font-mono);
   font-size: 10px;
   outline: none;
@@ -1167,7 +1166,7 @@ body.stage-garden .hearts-bg-container {
 
 .share-link-box .btn {
   border-left: 1px solid var(--border-color);
-  padding: 16px 20px;
+  padding: 12px 16px;
   font-size: 11px;
 }
 
@@ -1182,8 +1181,8 @@ body.stage-garden .hearts-bg-container {
 .garden-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
-  padding: 20px 0;
+  gap: 20px;
+  padding: 10px 0;
 }
 
 @media (min-width: 600px) {
@@ -1223,5 +1222,5 @@ body.stage-garden .hearts-bg-container {
 }
 
 .garden-footer {
-  margin-top: 50px;
+  margin-top: 25px;
 }
