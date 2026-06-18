@@ -1,0 +1,1000 @@
+/* ==========================================================================
+   Petal Post CSS Design System & Layouts
+   ========================================================================== */
+
+/* 1. Design Tokens & CSS Variables */
+:root {
+  --bg-color: #F5F5DC;          /* Classic Warm Cream / Beige */
+  --text-color: #1A1A1A;        /* Deep Off-Black */
+  --card-bg: #FFFFFF;           /* Card Paper White */
+  --btn-bg: #000000;            /* Pitch Black Buttons */
+  --btn-text: #F5F5DC;          /* Cream Text for Buttons */
+  --border-color: #000000;      /* Crisp Solid Borders */
+  --accent-color: #E6E6C2;      /* Slightly darker warm cream for hovers */
+  
+  --font-mono: 'Martian Mono', monospace;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Outfit', sans-serif;
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --shadow-premium: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 8px rgba(0, 0, 0, 0.02);
+  --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* 2. Global Resets & Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.5s ease;
+}
+
+body.stage-home {
+  background-color: #FFEAEF; /* Soft premium pastel blush pink */
+}
+
+/* App Layout */
+.app-container {
+  display: flex;
+  flex-col: column;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-header {
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.logo-link {
+  display: inline-block;
+  transition: var(--transition-smooth);
+}
+
+.logo-link:hover {
+  transform: scale(1.02);
+}
+
+.logo-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-feature-settings: "swsh" 1, "ss01" 1, "ss02" 1;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  color: var(--text-color);
+  text-transform: none;
+  text-decoration: none;
+  border-bottom: none;
+  padding-bottom: 0;
+  display: inline-block;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 40px 0 20px 0;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.footer-link {
+  color: var(--text-color);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* 3. Base UI Elements & Buttons */
+.btn {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 16px 32px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #222222;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.btn-secondary-outline {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary-outline:hover:not(:disabled) {
+  border-color: var(--border-color);
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.btn-tertiary {
+  background-color: transparent;
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+.btn-tertiary:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.btn:disabled {
+  background-color: #CCCCCC;
+  color: #777777;
+  border-color: #CCCCCC;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-full-width {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Utility classes */
+.hidden {
+  display: none !important;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.mono-filter {
+  filter: grayscale(1) contrast(1.05);
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+/* 4. Navigation Views Setup */
+.view-section {
+  display: none;
+  width: 100%;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.view-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 5. Home View */
+.hero-container {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-flower-wrapper {
+  margin-bottom: 24px;
+  display: inline-block;
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+.hero-flower-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-feature-settings: "swsh" 1, "ss01" 1, "ss02" 1;
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  color: var(--text-color);
+  text-transform: none;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--text-color);
+  opacity: 0.8;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.button-group .btn {
+  width: 100%;
+  max-width: 400px;
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+/* 6. Flower Picker View */
+.picker-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.flower-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 500px) {
+  .flower-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .flower-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Flower Cards & Tooltips */
+.flower-card {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.flower-img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+.flower-card:hover .flower-img-wrapper {
+  transform: translateY(-8px);
+}
+
+.flower-card-img {
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Sizes for grids */
+.flower-card.size-small .flower-img-wrapper { width: 100px; height: 100px; }
+.flower-card.size-small .flower-card-img { width: 100px; height: 100px; }
+
+.flower-card.size-medium .flower-img-wrapper { width: 130px; height: 130px; }
+.flower-card.size-medium .flower-card-img { width: 130px; height: 130px; }
+
+.flower-card.size-large .flower-img-wrapper { width: 150px; height: 150px; }
+.flower-card.size-large .flower-card-img { width: 150px; height: 150px; }
+
+/* Custom Tooltip Styling */
+.flower-tooltip {
+  visibility: hidden;
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.flower-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--btn-bg) transparent transparent transparent;
+}
+
+.flower-card:hover .flower-tooltip,
+.flower-instance:hover .flower-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-title {
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.tooltip-desc {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Selection Drawer - Styled in flow above the grid */
+.selection-drawer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  background-color: transparent; /* No background */
+  border: none; /* No border */
+  border-radius: 0;
+  padding: 10px 0 0 0;
+  margin: 0 auto 10px auto;
+  z-index: 50;
+  box-shadow: none; /* No shadow */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.drawer-title {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.selected-flowers-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto 4px auto;
+  min-height: 40px;
+  align-items: center;
+}
+
+.selected-tag {
+  font-size: 11px;
+  padding: 6px 12px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  animation: tagPop 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: var(--transition-smooth);
+}
+
+.selected-tag:hover {
+  background-color: #FFD2D2; /* Soft red deletion indicator */
+  border-color: #FF0000;
+}
+
+.selected-tag::after {
+  content: "×";
+  font-weight: bold;
+}
+
+@keyframes tagPop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.drawer-actions {
+  text-align: center;
+}
+
+.btn-next {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* 7. Bouquet Customizer View */
+.customizer-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.customizer-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .customizer-layout {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+/* Stacking Sandwich Bouquet Container */
+.bouquet-preview-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 550px;
+}
+
+.bouquet-sandwich-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-width: 600px;
+  min-height: 520px;
+  background-color: transparent;
+  overflow: visible; /* Let tall foliage and high blooms breathe naturally without clipping */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bush-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 410px;
+  object-fit: contain;
+}
+
+/* Custom scales for individual foliage types to keep them perfectly proportioned */
+.foliage-type-1 {
+  transform: translate(-50%, -50%) scale(1.15); /* bamboo leaves, scale up slightly for better framing */
+}
+.foliage-type-2 {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+.foliage-type-3 {
+  transform: translate(-50%, -50%) scale(1.0); /* olive branch, scaled down as requested */
+}
+.foliage-type-4 {
+  transform: translate(-50%, -50%) scale(1.35); /* make this ribbed leaf branch bigger as requested! */
+}
+.foliage-type-5 {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.foliage-type-6 {
+  transform: translate(-50%, -50%) scale(1.15); /* green leaves branch */
+}
+.foliage-type-7 {
+  transform: translate(-50%, -50%) scale(1.0); /* palm leaves, scaled down as requested */
+}
+
+.z-background {
+  z-index: 1;
+}
+
+.z-foreground {
+  z-index: 10;
+  pointer-events: none; /* Let clicks pass through if needed */
+}
+
+/* Flowers wrapped and overlapped */
+.flowers-wrap-container {
+  position: relative;
+  z-index: 5;
+  width: 310px;
+  top: -15px; /* pull up onto the green foliage */
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.78); /* scale down to keep everything safely inside the frame */
+  transform-origin: center center;
+}
+
+.flower-instance {
+  position: relative;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -22px;
+  margin-right: -22px;
+  margin-top: -42px;
+  margin-bottom: -42px;
+}
+
+.flower-instance:hover {
+  z-index: 20;
+}
+
+.flower-instance-img {
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.flower-instance:hover .flower-instance-img {
+  transform: scale(1.08) !important;
+}
+
+/* Custom scale overrides for individual flower types */
+.flower-wildflower .flower-instance-img {
+  transform: scale(1.4); /* 40% larger by default */
+}
+.flower-wildflower:hover .flower-instance-img {
+  transform: scale(1.5) !important; /* proportionally larger on hover */
+}
+
+/* Sizes inside the bouquet */
+.flower-instance.size-small { width: 95px; height: 95px; }
+.flower-instance.size-small img { width: 95px; height: 95px; }
+
+.flower-instance.size-medium { width: 135px; height: 135px; }
+.flower-instance.size-medium img { width: 135px; height: 135px; }
+
+.flower-instance.size-large { width: 175px; height: 175px; }
+.flower-instance.size-large img { width: 175px; height: 175px; }
+
+/* Control Panel */
+.controls-panel {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.control-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.control-btn {
+  width: 100%;
+  padding: 18px;
+  font-size: 12px;
+}
+
+.customizer-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.customizer-navigation .btn {
+  flex: 1;
+}
+
+/* 8. Card Writer View */
+.card-writer-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-form-wrapper {
+  margin-top: 20px;
+  perspective: 1000px;
+}
+
+.card-paper {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-card);
+  text-align: left;
+  border-radius: 2px;
+  position: relative;
+}
+
+.card-paper::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  pointer-events: none;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--text-color);
+  padding: 8px 0;
+  outline: none;
+  text-transform: none; /* Allow normal casing in message */
+  transition: border-color 0.3s;
+}
+
+.form-group input[type="text"] {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  border-bottom-color: var(--border-color);
+}
+
+.form-group textarea {
+  resize: none;
+  line-height: 1.6;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.card-actions .btn {
+  flex: 1;
+}
+
+/* 9. Share / Receive View */
+.share-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.success-banner {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: scaleUp 0.3s ease-out;
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.success-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.success-subtitle {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.share-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .share-layout {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.share-showcase-panel {
+  width: 100%;
+  max-width: 550px;
+}
+
+.share-card-panel {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Premium Envelope Card Opening Effect */
+.gift-card {
+  width: 100%;
+  max-width: 350px;
+  min-height: 250px;
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.gift-card-front {
+  width: 100%;
+  height: 250px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.gift-card:hover .gift-card-front {
+  transform: translateY(-5px);
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(180deg, #EBEBEB, #FFFFFF);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.envelope-body {
+  text-align: center;
+  margin-top: 40px;
+  z-index: 2;
+}
+
+.envelope-label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.envelope-click-hint {
+  font-size: 10px;
+  opacity: 0.4;
+  letter-spacing: 1px;
+  animation: wiggle 2s infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+.gift-card-inside {
+  width: 100%;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-card);
+  text-align: left;
+  border-radius: 2px;
+  position: relative;
+  animation: slideOutCard 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideOutCard {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.card-content-to {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 6px;
+}
+
+.card-content-msg {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 30px;
+  text-transform: none;
+  font-style: italic;
+  min-height: 80px;
+}
+
+.card-content-from {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  text-align: right;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 6px;
+}
+
+.btn-close-card {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+.btn-close-card:hover {
+  opacity: 0.8;
+}
+
+.share-actions-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.share-link-box {
+  display: flex;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  width: 100%;
+}
+
+.share-link-box input {
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  padding: 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  outline: none;
+  color: var(--text-color);
+}
+
+.share-link-box .btn {
+  border-left: 1px solid var(--border-color);
+  padding: 16px 20px;
+  font-size: 11px;
+}
+
+/* 10. Garden View */
+.garden-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.garden-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+@media (min-width: 600px) {
+  .garden-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .garden-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.garden-item {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 2px;
+  box-shadow: var(--shadow-premium);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.garden-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
+
+.garden-item-date {
+  font-size: 11px;
+  opacity: 0.5;
+  margin-top: 15px;
+}
+
+.garden-footer {
+  margin-top: 50px;
+}

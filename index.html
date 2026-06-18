@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>petalpost — send a digital flower bouquet</title>
+  <meta name="description" content="Build a beautiful digital flower bouquet and send it to someone you love. Choose from roses, peonies, sunflowers, and more. Free, fun, and made with love.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Preloads for critical assets -->
+  <link rel="preload" as="image" href="assets/flowers/peony.png">
+  <link rel="preload" as="image" href="assets/foliage/foliage-1.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="stage-home">
+
+  <!-- App Wrapper -->
+  <div id="app" class="app-container">
+    
+    <!-- HEADER (Persistent, except on share/receiver page) -->
+    <header id="app-header" class="app-header hidden">
+      <a href="#" id="logo-link" class="logo-link">
+        <h1 class="logo-text">Petalpost</h1>
+      </a>
+    </header>
+
+    <!-- VIEWS CONTAINER -->
+    <main id="main-content" class="main-content">
+      
+      <!-- 1. HOME VIEW -->
+      <section id="view-home" class="view-section active">
+        <div class="hero-container">
+          <div class="hero-flower-wrapper">
+            <img src="assets/flowers/peony.png" alt="peony flower" class="hero-flower-img">
+          </div>
+          <h1 class="hero-title">Petalpost</h1>
+          <p class="hero-subtitle">beautiful flowers delivered digitally</p>
+          
+          <div class="button-group">
+            <button id="btn-start-color" class="btn btn-primary" onclick="startApp('color')">BUILD A BOUQUET</button>
+            <button id="btn-view-garden" class="btn btn-tertiary" onclick="showGarden()">VIEW GARDEN</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. FLOWER PICKER VIEW -->
+      <section id="view-picker" class="view-section">
+        <div class="picker-container">
+          <h2 class="section-title">Pick 4 to 7 BLOOMS</h2>
+          <p id="picker-help" class="section-subtitle opacity-50">Click on a flower to add it to your bouquet.</p>
+          
+          <!-- Selection Drawer -->
+          <div id="selection-drawer" class="selection-drawer">
+            <h3 class="drawer-title">Selected Blooms (<span id="selected-count">0</span>/7)</h3>
+            <div id="selected-flowers-list" class="selected-flowers-list">
+              <!-- Dynamically populated selected flowers list -->
+            </div>
+          </div>
+
+          <!-- Flower Grid -->
+          <div id="flower-grid" class="flower-grid">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <!-- Drawer Actions (Next Button) -->
+          <div class="drawer-actions" style="margin-top: 30px; margin-bottom: 50px;">
+            <button id="btn-picker-next" class="btn btn-primary btn-next" disabled onclick="goToCustomizer()">NEXT</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. BOUQUET CUSTOMIZER VIEW -->
+      <section id="view-customize" class="view-section">
+        <div class="customizer-container">
+          <div class="customizer-layout">
+            
+            <!-- Left Side: Bouquet Live Preview -->
+            <div class="bouquet-preview-panel">
+              <div class="bouquet-sandwich-container" id="bouquet-container">
+                <!-- Stacking: Background Bush, Flowers, Foreground Bush Top -->
+                <img id="bush-background" src="" alt="bush background" class="bush-layer z-background">
+                
+                <!-- Flowers wrap container -->
+                <div id="flowers-wrap-container" class="flowers-wrap-container">
+                  <!-- Dynamically arranged flowers -->
+                </div>
+                
+                <img id="bush-foreground" src="" alt="bush top" class="bush-layer z-foreground">
+              </div>
+            </div>
+
+            <!-- Right Side: Controls -->
+            <div class="controls-panel">
+              <h2 class="section-title">Customize Your Arrangement</h2>
+              <p class="section-subtitle opacity-50">Tweak your bouquet to make it unique.</p>
+              
+              <div class="control-actions">
+                <button id="btn-change-greenery" class="btn btn-secondary-outline control-btn" onclick="changeGreenery()">
+                  <span class="icon">🌿</span> CHANGE FOLIAGE
+                </button>
+                <button id="btn-shuffle-blooms" class="btn btn-secondary-outline control-btn" onclick="shuffleFlowers()">
+                  <span class="icon">🔀</span> SHUFFLE BLOOMS
+                </button>
+              </div>
+
+              <div class="customizer-navigation">
+                <button class="btn btn-tertiary" onclick="goToPicker()">BACK</button>
+                <button class="btn btn-primary" onclick="goToCardWriter()">NEXT</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. CARD WRITER VIEW -->
+      <section id="view-card" class="view-section">
+        <div class="card-writer-container">
+          <h2 class="section-title">WRITE THE CARD</h2>
+          <p class="section-subtitle opacity-50">Write a beautiful message for your recipient.</p>
+
+          <div class="card-form-wrapper">
+            <div class="card-paper">
+              <form id="card-form" onsubmit="submitCard(event)">
+                <div class="form-group">
+                  <label for="input-to">TO:</label>
+                  <input type="text" id="input-to" required placeholder="Name or nickname" autocomplete="off">
+                </div>
+                
+                <div class="form-group">
+                  <label for="input-msg">MESSAGE:</label>
+                  <textarea id="input-msg" required placeholder="Write something from the heart..." rows="5"></textarea>
+                </div>
+                
+                <div class="form-group">
+                  <label for="input-from">FROM:</label>
+                  <input type="text" id="input-from" required placeholder="Your name" autocomplete="off">
+                </div>
+
+                <div class="card-actions">
+                  <button type="button" class="btn btn-tertiary" onclick="goToCustomizer()">BACK</button>
+                  <button type="submit" class="btn btn-primary">CREATE BOUQUET</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SHARE / RECEIVE VIEW -->
+      <section id="view-share" class="view-section">
+        <div class="share-container">
+          <!-- Congratulatory message for Sender, hidden for Receiver -->
+          <div id="sender-success-message" class="success-banner hidden">
+            <h2 class="success-title">Your digital bouquet is ready!</h2>
+            <p class="success-subtitle">Copy the link below and send it to your loved one.</p>
+          </div>
+
+          <div class="share-layout">
+            
+            <!-- Bouquet Showcase -->
+            <div class="share-showcase-panel">
+              <div class="bouquet-sandwich-container" id="share-bouquet-container">
+                <img id="share-bush-background" src="" alt="bush background" class="bush-layer z-background">
+                <div id="share-flowers-wrap-container" class="flowers-wrap-container">
+                  <!-- Dynamically populated -->
+                </div>
+                <img id="share-bush-foreground" src="" alt="bush top" class="bush-layer z-foreground">
+              </div>
+            </div>
+
+            <!-- Card Showcase -->
+            <div class="share-card-panel">
+              <div class="gift-card" id="gift-card">
+                <div class="gift-card-front" id="gift-card-envelope" onclick="openCard()">
+                  <div class="envelope-flap"></div>
+                  <div class="envelope-body">
+                    <p class="envelope-label">FOR YOU</p>
+                    <p class="envelope-click-hint">Click to open card</p>
+                  </div>
+                </div>
+                <div class="gift-card-inside hidden" id="gift-card-content">
+                  <div class="card-content-to" id="display-to">To: Alice</div>
+                  <div class="card-content-msg" id="display-msg">Happy Birthday! I hope you have a beautiful day.</div>
+                  <div class="card-content-from" id="display-from">From: Bob</div>
+                  <button class="btn-close-card" onclick="closeCard()">×</button>
+                </div>
+              </div>
+              
+              <!-- Sender Actions (Copy Link, etc.) -->
+              <div id="sender-actions" class="share-actions-panel hidden">
+                <div class="share-link-box">
+                  <input type="text" id="share-url-input" readonly>
+                  <button id="btn-copy-link" class="btn btn-primary" onclick="copyShareLink()">COPY LINK</button>
+                </div>
+                <button class="btn btn-secondary btn-full-width" onclick="resetApp()">CREATE ANOTHER BOUQUET</button>
+              </div>
+
+              <!-- Receiver Actions (Make your own) -->
+              <div id="receiver-actions" class="share-actions-panel hidden">
+                <button class="btn btn-primary btn-full-width" onclick="resetApp()">CREATE YOUR OWN BOUQUET</button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. GARDEN VIEW -->
+      <section id="view-garden" class="view-section">
+        <div class="garden-container">
+          <h2 class="section-title">OUR GARDEN</h2>
+          <p class="section-subtitle opacity-50">A peek at the bouquets you have made!</p>
+          
+          <div id="garden-grid" class="garden-grid">
+            <!-- local storage populated -->
+          </div>
+
+          <div class="garden-footer">
+            <button class="btn btn-secondary" onclick="goHome()">BACK TO HOME</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="app-footer" class="app-footer"></footer>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="index.js"></script>
+</body>
+</html>
