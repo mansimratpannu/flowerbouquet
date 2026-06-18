@@ -181,10 +181,11 @@ body.stage-customize {
   --btn-text: #fceef1;
 }
 
-body.stage-share {
+body.stage-share,
+body.stage-garden {
   background-color: #ffffff; /* Clean white base matching the heart background */
   --bg-color: #ffffff;
-  --btn-text: #ff8fa3; /* Soft pink for buttons on the share stage */
+  --btn-text: #ff8fa3; /* Soft pink for buttons on the share and garden stages */
   --accent-color: #ffe5ea;
 }
 
@@ -206,7 +207,8 @@ body.stage-share {
   transition: opacity 0.5s ease, background-color 0.5s ease;
 }
 
-body.stage-share .hearts-bg-container {
+body.stage-share .hearts-bg-container,
+body.stage-garden .hearts-bg-container {
   opacity: 1;
 }
 
@@ -217,19 +219,19 @@ body.stage-share .hearts-bg-container {
   width: 120%;
   height: 120%;
   background-image: url("assets/glowing_hearts_bg.svg");
-  background-size: 320px 320px;
+  background-size: 480px 480px;
   background-repeat: repeat;
   opacity: 0.9;
-  animation: floatHearts 40s infinite linear;
+  animation: floatHearts 50s infinite linear;
 }
 
 .hearts-layer.layer-2 {
   background-image: url("assets/glowing_hearts_bg.svg");
-  background-size: 480px 480px;
+  background-size: 720px 720px;
   background-repeat: repeat;
   opacity: 0.45;
   mix-blend-mode: multiply;
-  animation: floatHearts2 60s infinite linear;
+  animation: floatHearts2 75s infinite linear;
 }
 
 @keyframes floatHearts {
@@ -237,7 +239,7 @@ body.stage-share .hearts-bg-container {
     background-position: 0 0;
   }
   100% {
-    background-position: 320px -320px;
+    background-position: 480px -480px;
   }
 }
 
@@ -246,7 +248,7 @@ body.stage-share .hearts-bg-container {
     background-position: 0 0;
   }
   100% {
-    background-position: -480px -480px;
+    background-position: -720px -720px;
   }
 }
 
