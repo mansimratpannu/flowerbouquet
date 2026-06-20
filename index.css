@@ -566,7 +566,7 @@ body.stage-garden .hearts-bg-container {
 .flower-label {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-color);
   margin-top: 8px;
