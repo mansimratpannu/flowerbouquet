@@ -6,7 +6,7 @@
 const flowersData = [
   { id: 1, name: "orchid", meaning: "Beauty", birthMonth: "October", size: "medium" },
   { id: 2, name: "sunflower", meaning: "Adoration", birthMonth: "August", size: "large" },
-  { id: 3, name: "plumeria", meaning: "Grace & Charm", birthMonth: "May", size: "large" },
+  { id: 3, name: "plumeria", meaning: "Charm", birthMonth: "May", size: "large" },
   { id: 4, name: "pink_lily", meaning: "Prosperity", birthMonth: "May", size: "large" },
   { id: 5, name: "stargazer_lily", meaning: "Hope and ambition", birthMonth: "May", size: "large" },
   { id: 6, name: "clematis", meaning: "Trust and grace", birthMonth: "April", size: "medium" },
