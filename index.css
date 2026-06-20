@@ -767,7 +767,7 @@ body.stage-garden .hearts-bg-container {
   transform: translate(-50%, -50%) scale(1.15); /* green leaves branch */
 }
 .foliage-type-7 {
-  transform: translate(-50%, -50%) scale(1.20); /* palm leaves, scaled up as requested */
+  transform: translate(-50%, -50%) scale(1.00); /* new watercolor branch foliage, adjusted for its larger asset dimensions */
 }
 
 .z-background {
