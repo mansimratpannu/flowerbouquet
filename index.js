@@ -47,6 +47,11 @@ function getFlowerOffsets(index, id, rotation) {
   return { x: parseFloat(x.toFixed(1)), y: parseFloat(y.toFixed(1)) };
 }
 
+function formatFlowerName(name) {
+  if (!name) return "";
+  return name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
 // Logo resets app when clicked
 function setupLogoListener() {
   const logo = document.getElementById("logo-link");
@@ -130,7 +135,7 @@ function renderPickerGrid() {
     // Label
     const label = document.createElement("span");
     label.className = "flower-label";
-    const displayName = flower.name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    const displayName = formatFlowerName(flower.name);
     label.textContent = displayName;
 
     // Tooltip
@@ -217,7 +222,7 @@ function updatePickerDrawer() {
     if (flowerInfo) {
       const tag = document.createElement("div");
       tag.className = "selected-tag";
-      tag.textContent = flowerInfo.name;
+      tag.textContent = formatFlowerName(flowerInfo.name);
       tag.onclick = () => removeFlowerInstance(index);
       list.appendChild(tag);
     }
@@ -307,10 +312,11 @@ function renderBouquet(containerId, flowersWrapId, bgId, fgId) {
     img.loading = "eager";
 
     // Tooltip showing name and meaning on hover
+    const displayName = formatFlowerName(flowerInfo.name);
     const tooltip = document.createElement("div");
     tooltip.className = "flower-tooltip";
     tooltip.innerHTML = `
-      <div class="tooltip-title">${flowerInfo.name}</div>
+      <div class="tooltip-title">${displayName}</div>
       <div class="tooltip-desc">${flowerInfo.meaning}</div>
     `;
 
