@@ -127,7 +127,7 @@ function renderPickerGrid() {
     
     const img = document.createElement("img");
     img.className = "flower-card-img";
-    img.src = `assets/flowers/${flower.name}.png`; // local path
+    img.src = `assets/flowers/${flower.name}.png?v=4`; // local path
     img.alt = `${flower.name} flower`;
     img.loading = "lazy";
     imgWrapper.appendChild(img);
@@ -306,7 +306,7 @@ function renderBouquet(containerId, flowersWrapId, bgId, fgId) {
 
     // Image element
     const img = document.createElement("img");
-    img.src = `assets/flowers/${flowerInfo.name}.png`;
+    img.src = `assets/flowers/${flowerInfo.name}.png?v=4`;
     img.alt = flowerInfo.name;
     img.className = "flower-instance-img";
     img.loading = "eager";
@@ -669,7 +669,7 @@ function showGarden() {
           flowerDiv.style.transform = `translate(${offsets.x}px, ${offsets.y}px) rotate(${flower.rotation}deg)`;
 
           const img = document.createElement("img");
-          img.src = `assets/flowers/${flowerInfo.name}.png`;
+          img.src = `assets/flowers/${flowerInfo.name}.png?v=4`;
           img.alt = flowerInfo.name;
           img.className = "flower-instance-img";
 
