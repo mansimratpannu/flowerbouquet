@@ -130,8 +130,8 @@ function renderPickerGrid() {
     // Label
     const label = document.createElement("span");
     label.className = "flower-label";
-    label.style.marginTop = "8px";
-    label.textContent = flower.name;
+    const displayName = flower.name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    label.textContent = displayName;
 
     // Tooltip
     const tooltip = document.createElement("div");

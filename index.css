@@ -563,6 +563,23 @@ body.stage-garden .hearts-bg-container {
   pointer-events: none;
 }
 
+.flower-label {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-top: 8px;
+  opacity: 0.85;
+  transition: var(--transition-smooth);
+}
+
+.flower-card:hover .flower-label {
+  opacity: 1;
+  color: #000000;
+}
+
+
 /* Sizes for grids */
 .flower-card.size-small .flower-img-wrapper { width: 100px; height: 100px; }
 .flower-card.size-small .flower-card-img { width: 100px; height: 100px; }
