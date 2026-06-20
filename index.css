@@ -755,7 +755,7 @@ body.stage-garden .hearts-bg-container {
   transform: translate(-50%, -50%) scale(1.05);
 }
 .foliage-type-3 {
-  transform: translate(-50%, -50%) scale(1.20); /* olive branch, scaled up as requested */
+  transform: translate(-50%, -50%) scale(1.45); /* olive branch, scaled up further as requested */
 }
 .foliage-type-4 {
   transform: translate(-50%, -50%) scale(0.80); /* scaled down to be smaller and tighter behind the flowers */
