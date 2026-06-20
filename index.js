@@ -270,7 +270,7 @@ function renderBouquet(containerId, flowersWrapId, bgId, fgId) {
 
   // Set foliage images (always color, we apply grayscale via CSS if mode is mono)
   bg.className = `bush-layer z-background foliage-type-${state.greenery + 1}`;
-  bg.src = `assets/foliage/foliage-${state.greenery + 1}.png?v=2`;
+  bg.src = `assets/foliage/foliage-${state.greenery + 1}.png?v=3`;
   fg.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
   // Apply monochrome class
@@ -644,7 +644,7 @@ function showGarden() {
         const foliageIndex = item.greenery % 6;
         const bg = document.createElement("img");
         bg.className = `bush-layer z-background foliage-type-${foliageIndex + 1}`;
-        bg.src = `assets/foliage/foliage-${foliageIndex + 1}.png?v=2`;
+        bg.src = `assets/foliage/foliage-${foliageIndex + 1}.png?v=3`;
 
         const wrap = document.createElement("div");
         wrap.className = "flowers-wrap-container";
