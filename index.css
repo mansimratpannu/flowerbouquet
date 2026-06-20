@@ -761,7 +761,7 @@ body.stage-garden .hearts-bg-container {
   transform: translate(-50%, -50%) scale(0.95); /* adjusted scale for better framing and visibility */
 }
 .foliage-type-5 {
-  transform: translate(-50%, -50%) scale(1.25); /* scaled up for better visibility and framing */
+  transform: translate(-50%, -50%) scale(1.15); /* watercolor eucalyptus branch, adjusted for proper framing */
 }
 .foliage-type-6 {
   transform: translate(-50%, -50%) scale(1.15); /* green leaves branch */
