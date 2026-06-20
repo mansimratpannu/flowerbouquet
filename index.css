@@ -758,7 +758,7 @@ body.stage-garden .hearts-bg-container {
   transform: translate(-50%, -50%) scale(1.20); /* olive branch, scaled up as requested */
 }
 .foliage-type-4 {
-  transform: translate(-50%, -50%) scale(1.35); /* make this ribbed leaf branch bigger as requested! */
+  transform: translate(-50%, -50%) scale(1.55); /* make this ribbed leaf branch bigger as requested! */
 }
 .foliage-type-5 {
   transform: translate(-50%, -50%) scale(1.1);
