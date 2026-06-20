@@ -6,16 +6,16 @@
 const flowersData = [
   { id: 1, name: "orchid", meaning: "Beauty", birthMonth: "October", size: "medium" },
   { id: 2, name: "sunflower", meaning: "Adoration", birthMonth: "August", size: "large" },
-  { id: 3, name: "lily", meaning: "Purity", birthMonth: "May", size: "large" },
+  { id: 3, name: "plumeria", meaning: "Grace & Charm", birthMonth: "May", size: "large" },
   { id: 4, name: "pink_lily", meaning: "Prosperity", birthMonth: "May", size: "large" },
-  { id: 5, name: "peony", meaning: "Romance", birthMonth: "May", size: "large" },
+  { id: 5, name: "forget_me_not", meaning: "True Love & Memories", birthMonth: "May", size: "large" },
   { id: 6, name: "blue_flower", meaning: "Trust and grace", birthMonth: "April", size: "medium" },
   { id: 7, name: "wildflower", meaning: "Joy", birthMonth: "July", size: "large" },
   { id: 8, name: "rose", meaning: "Love and passion", birthMonth: "June", size: "large" },
   { id: 9, name: "anemone", meaning: "Anticipation", birthMonth: "September", size: "medium" },
   { id: 10, name: "white_camellia", meaning: "Adoration & Lovely", birthMonth: "July", size: "medium" },
   { id: 11, name: "lotus", meaning: "Purity and strength", birthMonth: "July", size: "large" },
-  { id: 12, name: "hibiscus", meaning: "Delicate beauty", birthMonth: "September", size: "large" }
+  { id: 12, name: "yellow_orchid", meaning: "Joy & Friendship", birthMonth: "September", size: "large" }
 ];
 
 // 2. Application State
