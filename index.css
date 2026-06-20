@@ -818,13 +818,9 @@ body.stage-garden .hearts-bg-container {
   transform: scale(1.08) !important;
 }
 
+
 /* Custom scale overrides for individual flower types */
-.flower-wildflower .flower-instance-img {
-  transform: scale(1.4); /* 40% larger by default */
-}
-.flower-wildflower:hover .flower-instance-img {
-  transform: scale(1.5) !important; /* proportionally larger on hover */
-}
+
 
 /* Sizes inside the bouquet */
 .flower-instance.size-small { width: 95px; height: 95px; }
