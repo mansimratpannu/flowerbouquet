@@ -313,7 +313,7 @@ body.stage-garden .hearts-bg-container {
 .main-content {
   flex-grow: 1;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   width: 100%;
   padding-top: 5px;
