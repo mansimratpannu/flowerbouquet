@@ -136,7 +136,6 @@ function renderPickerGrid() {
     // Tooltip
     const tooltip = document.createElement("div");
     tooltip.className = "flower-tooltip";
-    const displayName = flower.name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     tooltip.innerHTML = `
       <div class="tooltip-title">${displayName}</div>
       <div class="tooltip-desc">${flower.meaning}</div>
