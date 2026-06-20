@@ -321,7 +321,7 @@ function renderBouquet(containerId, flowersWrapId, bgId, fgId) {
 }
 
 function changeGreenery() {
-  state.greenery = (state.greenery + 1) % 7;
+  state.greenery = (state.greenery + 1) % 6;
   
   // Re-render customizer
   renderBouquet("bouquet-container", "flowers-wrap-container", "bush-background", "bush-foreground");
@@ -537,7 +537,7 @@ function checkURLParameters() {
     // We have a shared bouquet! Parse it.
     try {
       state.mode = urlParams.get("m") || "color";
-      state.greenery = parseInt(urlParams.get("g") || "0", 10);
+      state.greenery = parseInt(urlParams.get("g") || "0", 10) % 6;
       state.card.to = urlParams.get("to") || "";
       state.card.from = urlParams.get("from") || "";
       state.card.message = urlParams.get("msg") || "";
@@ -641,9 +641,10 @@ function showGarden() {
           thumbContainer.classList.add("mono-filter");
         }
 
+        const foliageIndex = item.greenery % 6;
         const bg = document.createElement("img");
-        bg.className = `bush-layer z-background foliage-type-${item.greenery + 1}`;
-        bg.src = `assets/foliage/foliage-${item.greenery + 1}.png`;
+        bg.className = `bush-layer z-background foliage-type-${foliageIndex + 1}`;
+        bg.src = `assets/foliage/foliage-${foliageIndex + 1}.png`;
 
         const wrap = document.createElement("div");
         wrap.className = "flowers-wrap-container";
