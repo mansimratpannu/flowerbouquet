@@ -726,9 +726,8 @@ body.stage-garden .hearts-bg-container {
 .bouquet-sandwich-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  max-width: 500px;
-  min-height: 440px;
+  max-width: 440px;
+  height: 380px;
   background-color: transparent;
   overflow: visible; /* Let tall foliage and high blooms breathe naturally without clipping */
   display: flex;
