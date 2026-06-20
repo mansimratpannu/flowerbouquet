@@ -758,7 +758,7 @@ body.stage-garden .hearts-bg-container {
   transform: translate(-50%, -50%) scale(1.20); /* olive branch, adjusted for balanced scaling */
 }
 .foliage-type-4 {
-  transform: translate(-50%, -50%) scale(0.80); /* scaled down to be smaller and tighter behind the flowers */
+  transform: translate(-50%, -50%) scale(0.95); /* adjusted scale for better framing and visibility */
 }
 .foliage-type-5 {
   transform: translate(-50%, -50%) scale(1.00); /* new monstera foliage branch, scaled to fit */
