@@ -752,7 +752,7 @@ body.stage-garden .hearts-bg-container {
   transform: translate(-50%, -50%) scale(1.15); /* bamboo leaves, scale up slightly for better framing */
 }
 .foliage-type-2 {
-  transform: translate(-50%, -50%) scale(1.05);
+  transform: translate(-50%, -50%) scale(0.80);
 }
 .foliage-type-3 {
   transform: translate(-50%, -50%) scale(1.0); /* olive branch, scaled down as requested */
