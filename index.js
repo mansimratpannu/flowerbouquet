@@ -15,7 +15,7 @@ const flowersData = [
   { id: 9, name: "anemone", meaning: "Anticipation", birthMonth: "September", size: "medium" },
   { id: 10, name: "white_camellia", meaning: "Adoration & Lovely", birthMonth: "July", size: "medium" },
   { id: 11, name: "lotus", meaning: "Purity and strength", birthMonth: "July", size: "large" },
-  { id: 12, name: "yellow_orchid", meaning: "Joy & Friendship", birthMonth: "September", size: "large" }
+  { id: 12, name: "hibiscus", meaning: "Delicate beauty", birthMonth: "September", size: "large" }
 ];
 
 // 2. Application State
