@@ -13,7 +13,7 @@ const flowersData = [
   { id: 7, name: "wildflower", meaning: "Joy", birthMonth: "July", size: "large" },
   { id: 8, name: "rose", meaning: "Love and passion", birthMonth: "June", size: "large" },
   { id: 9, name: "anemone", meaning: "Anticipation", birthMonth: "September", size: "medium" },
-  { id: 10, name: "white_camellia", meaning: "Adoration & Lovely", birthMonth: "July", size: "medium" },
+  { id: 10, name: "white_camellia", meaning: "Perfection", birthMonth: "July", size: "medium" },
   { id: 11, name: "lotus", meaning: "Purity", birthMonth: "July", size: "large" },
   { id: 12, name: "hibiscus", meaning: "Femininity", birthMonth: "September", size: "large" }
 ];
