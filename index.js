@@ -9,13 +9,13 @@ const flowersData = [
   { id: 3, name: "plumeria", meaning: "Grace & Charm", birthMonth: "May", size: "large" },
   { id: 4, name: "pink_lily", meaning: "Prosperity", birthMonth: "May", size: "large" },
   { id: 5, name: "stargazer_lily", meaning: "Hope and ambition", birthMonth: "May", size: "large" },
-  { id: 6, name: "blue_flower", meaning: "Trust and grace", birthMonth: "April", size: "medium" },
+  { id: 6, name: "clematis", meaning: "Trust and grace", birthMonth: "April", size: "medium" },
   { id: 7, name: "wildflower", meaning: "Joy", birthMonth: "July", size: "large" },
   { id: 8, name: "rose", meaning: "Love and passion", birthMonth: "June", size: "large" },
   { id: 9, name: "anemone", meaning: "Anticipation", birthMonth: "September", size: "medium" },
   { id: 10, name: "white_camellia", meaning: "Adoration & Lovely", birthMonth: "July", size: "medium" },
-  { id: 11, name: "lotus", meaning: "Purity and strength", birthMonth: "July", size: "large" },
-  { id: 12, name: "hibiscus", meaning: "Delicate beauty", birthMonth: "September", size: "large" }
+  { id: 11, name: "lotus", meaning: "Purity", birthMonth: "July", size: "large" },
+  { id: 12, name: "hibiscus", meaning: "Femininity", birthMonth: "September", size: "large" }
 ];
 
 // 2. Application State
